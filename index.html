@@ -1207,6 +1207,14 @@
     .footer-top{flex-direction:column;}
     .footer-bottom{flex-direction:column; align-items:flex-start;}
   }
+
+  /* ---------- Service selector groups ---------- */
+  #f-requirements option:disabled{
+    font-weight:700;
+    color:#8f8f99;
+    background:#101014;
+  }
+
 </style>
 </head>
 <body>
@@ -1769,9 +1777,10 @@
               </select>
             </div>
             <div class="form-field">
-              <label for="f-requirements">Testing Requirements</label>
-              <select id="f-requirements" name="requirements">
-                <option value="">Select focus area</option>
+              <label for="f-requirements">What can we help with?</label>
+              <select id="f-requirements" name="requirements" required>
+                <option value="">Select a service</option>
+                <option disabled>──────── GAME TESTING &amp; QA ────────</option>
                 <option>Functional Testing</option>
                 <option>Gameplay Testing</option>
                 <option>Performance Testing</option>
@@ -1779,12 +1788,17 @@
                 <option>Network &amp; Multiplayer Testing</option>
                 <option>Regression Testing</option>
                 <option>UX &amp; Usability Testing</option>
+                <option disabled>── GAMEPLAY DATA &amp; INTELLIGENCE ──</option>
+                <option>Multimodal Game Recording</option>
+                <option>Telemetry Logging</option>
+                <option>Action-Conditioned Trajectory Collection</option>
+                <option>Other / Custom Requirement</option>
                 <option>Not sure yet</option>
               </select>
             </div>
             <div class="form-field full">
               <label for="f-message">Message</label>
-              <textarea id="f-message" name="message" placeholder="Tell us about your game and what you need tested." required></textarea>
+              <textarea id="f-message" name="message" placeholder="Tell us about your game, project, and what you need help with." required></textarea>
             </div>
           </div>
           <div class="form-submit">
