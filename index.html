@@ -920,6 +920,118 @@
     color:var(--zb-gray);
   }
 
+
+  /* ---------- Portfolio / Past Work ---------- */
+  .portfolio-feature{
+    border:1px solid var(--zb-border);
+    background:linear-gradient(135deg,var(--zb-panel),var(--zb-black));
+    overflow:hidden;
+  }
+  .portfolio-feature-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:28px;
+    padding:38px 38px 32px;
+    border-bottom:1px solid var(--zb-border-soft);
+  }
+  .case-kicker{
+    font-family:var(--ff-mono);
+    color:var(--zb-gold);
+    font-size:10px;
+    letter-spacing:.16em;
+    margin-bottom:12px;
+  }
+  .portfolio-feature h3{
+    font-family:var(--ff-display);
+    font-size:clamp(30px,4vw,48px);
+    letter-spacing:.02em;
+    text-transform:uppercase;
+  }
+  .case-hours{
+    min-width:110px;
+    text-align:right;
+  }
+  .case-hours span{
+    display:block;
+    font-family:var(--ff-display);
+    color:var(--zb-white);
+    font-size:34px;
+    line-height:1;
+  }
+  .case-hours small{
+    display:block;
+    margin-top:7px;
+    font-family:var(--ff-mono);
+    color:var(--zb-gray-dim);
+    font-size:9px;
+    letter-spacing:.16em;
+  }
+  .portfolio-feature-body{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    border-bottom:1px solid var(--zb-border-soft);
+  }
+  .case-detail{
+    padding:24px 28px;
+    border-right:1px solid var(--zb-border-soft);
+  }
+  .case-detail:last-child{border-right:0;}
+  .case-detail span{
+    display:block;
+    font-family:var(--ff-mono);
+    color:var(--zb-gray-dim);
+    font-size:9px;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+    margin-bottom:9px;
+  }
+  .case-detail strong{
+    display:block;
+    color:var(--zb-white);
+    font-size:14px;
+    line-height:1.5;
+  }
+  .portfolio-feature-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    padding:26px 38px;
+  }
+  .portfolio-feature-footer p{
+    color:var(--zb-gray);
+    font-size:13px;
+    line-height:1.7;
+    max-width:700px;
+  }
+
+
+  /* ---------- Past Work Grid ---------- */
+  .portfolio-work-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+  .work-card{
+    width:100%;
+  }
+  .work-card .portfolio-feature-top{
+    padding:32px 34px 28px;
+  }
+  .work-card .portfolio-feature-body{
+    grid-template-columns:1fr 1.8fr 1fr;
+  }
+  .work-card .portfolio-feature-footer{
+    padding:20px 34px;
+  }
+  .work-card .portfolio-feature-footer p{
+    max-width:100%;
+  }
+  .work-card h3{
+    max-width:900px;
+  }
+
   /* ---------- About ---------- */
   .about-grid{
     display:grid;
@@ -1190,6 +1302,9 @@
     .contact-grid{grid-template-columns:1fr; gap:44px;}
     .network-grid{grid-template-columns:1fr;}
     .studio-grid{grid-template-columns:1fr;}
+    .portfolio-feature-body{grid-template-columns:1fr;}
+    .case-detail{border-right:0;border-bottom:1px solid var(--zb-border-soft);}
+    .case-detail:last-child{border-bottom:0;}
     .data-grid{grid-template-columns:1fr;}
   }
   @media (max-width: 640px){
@@ -1200,6 +1315,9 @@
     .expertise-grid{grid-template-columns:1fr;}
     .portfolio-grid{grid-template-columns:1fr;}
     .studio-cta{flex-direction:column; align-items:flex-start;}
+    .portfolio-feature-top{padding:28px 24px;}
+    .portfolio-feature-footer{flex-direction:column;align-items:flex-start;padding:24px;}
+    .portfolio-feature-footer .btn{width:100%;justify-content:center;}
     .studio-cta .btn{width:100%; justify-content:center;}
     .process-step{grid-template-columns:1fr; gap:10px;}
     .process-num{font-size:32px;}
@@ -1631,45 +1749,119 @@
   <section id="portfolio">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">Case Studies</div>
-        <h2>Portfolio</h2>
-        <p>We're currently accepting new projects. Selected client case studies will appear here as engagements are completed and approved for publication.</p>
+        <div class="eyebrow">Past Work</div>
+        <h2>Selected Experience</h2>
+        <p>Previous testing and gameplay recording work completed by ZeusaberZ Testing.</p>
       </div>
 
-      <div class="portfolio-grid reveal">
-        <div class="case-card">
-          <div class="case-card-top">
-            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4" width="18" height="14" rx="1"/><path d="M8 21h8M12 18v3"/></svg>
-            <span>Available</span>
+      <div class="portfolio-grid portfolio-work-grid reveal">
+
+        <!-- ANIMA FLUX -->
+        <article class="portfolio-feature work-card">
+          <div class="portfolio-feature-top">
+            <div>
+              <div class="case-kicker">GAME TESTING &amp; BUG REPORTING</div>
+              <h3>ANIMA FLUX</h3>
+            </div>
+            <div class="case-hours">
+              <span>200+</span>
+              <small>HOURS</small>
+            </div>
           </div>
-          <div class="case-card-bottom">
-            <div class="cat">PC Game Testing</div>
-            <h3>Bring Your Game Here</h3>
+
+          <div class="portfolio-feature-body">
+            <div class="case-detail">
+              <span>Engagement</span>
+              <strong>Testing &amp; Bug Reporting</strong>
+            </div>
+            <div class="case-detail">
+              <span>Game</span>
+              <strong>ANIMA FLUX</strong>
+            </div>
+            <div class="case-detail">
+              <span>Testing Time</span>
+              <strong>200+ Hours</strong>
+            </div>
           </div>
-        </div>
-        <div class="case-card">
-          <div class="case-card-top">
-            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
-            <span>Available</span>
+
+          <div class="portfolio-feature-footer">
+            <p>Hands-on game testing and bug reporting across 200+ hours of work.</p>
           </div>
-          <div class="case-card-bottom">
-            <div class="cat">Mobile Game Testing</div>
-            <h3>Bring Your Game Here</h3>
+        </article>
+
+        <!-- MULTIMODAL RECORDING — 300+ HOURS -->
+        <article class="portfolio-feature work-card">
+          <div class="portfolio-feature-top">
+            <div>
+              <div class="case-kicker">MULTIMODAL GAME RECORDING</div>
+              <h3>RUST · RDR2 · CYBERPUNK 2077</h3>
+            </div>
+            <div class="case-hours">
+              <span>300+</span>
+              <small>HOURS</small>
+            </div>
           </div>
-        </div>
-        <div class="case-card">
-          <div class="case-card-top">
-            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><path d="M2 20c0-3 2.5-5 5-5s5 2 5 5M12 20c0-3 2.5-5 5-5s5 2 5 5"/></svg>
-            <span>Available</span>
+
+          <div class="portfolio-feature-body">
+            <div class="case-detail">
+              <span>Engagement</span>
+              <strong>Multimodal Game Recording</strong>
+            </div>
+            <div class="case-detail">
+              <span>Games</span>
+              <strong>RUST · Red Dead Redemption 2 · Cyberpunk 2077</strong>
+            </div>
+            <div class="case-detail">
+              <span>Recording Time</span>
+              <strong>300+ Hours</strong>
+            </div>
           </div>
-          <div class="case-card-bottom">
-            <div class="cat">Multiplayer Testing</div>
-            <h3>Bring Your Game Here</h3>
+
+          <div class="portfolio-feature-footer">
+            <p>Structured multimodal gameplay recording across three large-scale open-world titles.</p>
           </div>
-        </div>
+        </article>
+
+        <!-- MULTIMODAL RECORDING — 1000+ HOURS -->
+        <article class="portfolio-feature work-card">
+          <div class="portfolio-feature-top">
+            <div>
+              <div class="case-kicker">MULTIMODAL GAME RECORDING</div>
+              <h3>10-TITLE GAMEPLAY COLLECTION</h3>
+            </div>
+            <div class="case-hours">
+              <span>1,000+</span>
+              <small>HOURS</small>
+            </div>
+          </div>
+
+          <div class="portfolio-feature-body">
+            <div class="case-detail">
+              <span>Engagement</span>
+              <strong>Multimodal Game Recording</strong>
+            </div>
+            <div class="case-detail">
+              <span>Titles</span>
+              <strong>Remnant II · RoboCop: Rogue City · Layers of Fear · Pacific Drive · Panicore · Trepang 2 · Immortals of Aveum · Alone in the Dark · Still Wakes the Deep · Silent Hill 2</strong>
+            </div>
+            <div class="case-detail">
+              <span>Recording Time</span>
+              <strong>1,000+ Hours</strong>
+            </div>
+          </div>
+
+          <div class="portfolio-feature-footer">
+            <p>Large-scale structured gameplay capture across a diverse range of titles.</p>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
+
+
+
+
 
   <!-- ================= ABOUT ================= -->
   <section id="about">
