@@ -1314,6 +1314,30 @@
     .services-grid{grid-template-columns:1fr;}
     .expertise-grid{grid-template-columns:1fr;}
     .portfolio-grid{grid-template-columns:1fr;}
+
+    /* Prevent long portfolio titles from pushing the hours block off-screen. */
+    .work-card .portfolio-feature-top{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:flex-start;
+      gap:18px 24px;
+      padding:28px 24px;
+    }
+    .work-card .portfolio-feature-top > div:first-child{
+      flex:1 1 220px;
+      min-width:0;
+    }
+    .work-card h3{
+      max-width:none;
+      overflow-wrap:anywhere;
+      word-break:normal;
+    }
+    .work-card .case-hours{
+      flex:0 0 auto;
+      min-width:110px;
+      margin-left:auto;
+    }
+
     .studio-cta{flex-direction:column; align-items:flex-start;}
     .portfolio-feature-top{padding:28px 24px;}
     .portfolio-feature-footer{flex-direction:column;align-items:flex-start;padding:24px;}
